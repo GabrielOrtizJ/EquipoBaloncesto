@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EquipoBaloncesto</string>
+    <string name="alta_equipo">Alta de equipo de baloncesto</string>
+    <string name="listado_equipos">Listado de equipos</string>
+    <string name="alta_resultados">Alta de resultados</string>
+    <string name="Clasificación">Clasificación</string>
+</resources>
