@@ -6,7 +6,8 @@ import androidx.room.ForeignKey
 import androidx.room.ForeignKey.Companion.CASCADE
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "jugadores", foreignKeys = [ForeignKey(entity = Equipo::class, parentColumns = ["id"], childColumns = ["id_equipo"], onDelete = CASCADE)])
+@Entity(tableName = "jugadores", foreignKeys = [ForeignKey(entity = Equipo::class, parentColumns = ["id"]
+    , childColumns = ["id_equipo"], onDelete = CASCADE)])
 data class Jugador(
     @PrimaryKey val id: Int,
     val nombre: String,

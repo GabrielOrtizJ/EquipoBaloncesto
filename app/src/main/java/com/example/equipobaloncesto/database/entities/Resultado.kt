@@ -9,5 +9,5 @@ data class Resultado(
     val equipo_local: String,
     val equipo_visitante: String,
     val fecha: String,
-    val resultado: String
+    val equipoGanador: String
 )

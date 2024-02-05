@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 val entrar = findViewById<TextView>(R.id.textViewEntrar)
 entrar.setOnClickListener{
     val intent = Intent(this,MainActivity2::class.java)
