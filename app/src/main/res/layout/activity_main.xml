@@ -8,32 +8,41 @@
     android:scaleType="fitXY"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/textViewEntrar"
         android:layout_width="135dp"
         android:layout_height="48dp"
+        android:layout_marginStart="141dp"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="136dp"
+        android:layout_marginBottom="291dp"
         android:background="@drawable/bt_entrar"
         android:gravity="center|center_vertical"
         android:text="Entrar"
         android:textColor="@color/white"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <EditText
         android:id="@+id/editTextUser"
         android:layout_width="224dp"
         android:layout_height="65dp"
-        android:layout_marginTop="188dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="5dp"
         android:ems="10"
         android:hint="Usuario"
         android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -41,14 +50,16 @@
         android:layout_width="224dp"
         android:layout_height="65dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="100dp"
 
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxRecordar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextUser" />
 
     <CheckBox

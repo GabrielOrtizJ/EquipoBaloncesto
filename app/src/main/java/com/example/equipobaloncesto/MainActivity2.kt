@@ -8,6 +8,8 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.ImageView
+import androidx.appcompat.widget.Toolbar
+
 import com.example.equipobaloncesto.activity.MainActivityAltaEquipo
 import com.example.equipobaloncesto.activity.MainActivityAltaResultado
 import com.example.equipobaloncesto.activity.MainActivityClasificacion
@@ -17,7 +19,8 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater
