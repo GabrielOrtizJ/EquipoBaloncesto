@@ -1,15 +1,15 @@
 package com.example.equipobaloncesto
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.widget.CheckBox
+import android.widget.EditText
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import com.example.equipobaloncesto.database.MiAppDatabase
-import com.example.equipobaloncesto.database.entities.Usuario
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -18,12 +18,42 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val Usuario = findViewById<EditText>(R.id.editTextUser)
+        val pwd = findViewById<EditText>(R.id.editTextPassword)
+        val check = findViewById<CheckBox>(R.id.checkBoxRecordar)
 
-val entrar = findViewById<TextView>(R.id.textViewEntrar)
-entrar.setOnClickListener{
-    val intent = Intent(this,MainActivity2::class.java)
-    startActivity(intent)
-}
+        val sharedPreferences = getSharedPreferences("MyApp", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        // Cargar datos guardados
+        Usuario.setText(sharedPreferences.getString("Username", ""))
+        pwd.setText(sharedPreferences.getString("Password", ""))
+        check.isChecked = sharedPreferences.getBoolean("RememberMe", false)
+
+        val entrar = findViewById<TextView>(R.id.textViewEntrar)
+        entrar.setOnClickListener{
+            if (check.isChecked) {
+                // Guardar datos del usuario
+                editor.putString("Username", Usuario.text.toString())
+                editor.putString("Password", pwd.text.toString())
+                editor.putBoolean("RememberMe", true)
+                editor.putLong("LoginTime", System.currentTimeMillis())
+                editor.apply()
+            }
+            val intent = Intent(this,MainActivity2::class.java)
+            startActivity(intent)
+        }
+
+        val rememberMe = sharedPreferences.getBoolean("RememberMe", false)
+        val loginTime = sharedPreferences.getLong("LoginTime", 0)
+        val twoDaysMillis: Long = 2 * 24 * 60 * 60 * 1000
+
+        if (rememberMe && System.currentTimeMillis() - loginTime < twoDaysMillis) {
+            val intent = Intent(this,MainActivity2::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 
         lifecycleScope.launch {
             databaseAccess()
@@ -33,16 +63,11 @@ entrar.setOnClickListener{
     suspend fun databaseAccess(){
         val db = Room.databaseBuilder(
             applicationContext,
-            MiAppDatabase::class.java, "DDBB"
-        ).build()
+            MiAppDatabase::class.java, "DDBB" ).build()
 
-//
-//        val usuarioDao = db.usuarioDao()
-//
-//        var usuario = Usuario(5, "Antonio", "Antonio1")
-//         usuarioDao.insertarUsuario(usuario)
-//        val usuarios: List<Usuario> = usuarioDao.obtenerTodos()
-//
-//        val i = 0
+
+
+
+
     }
 }

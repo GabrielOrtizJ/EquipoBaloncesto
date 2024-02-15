@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/equipo"
+    android:background="@drawable/fondoequipo"
     tools:context=".activity.MainActivityAltaEquipo">
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/tvNombre"
         android:layout_width="205dp"
         android:layout_height="64dp"
         android:layout_marginStart="94dp"
@@ -23,6 +23,7 @@
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -38,13 +39,14 @@
         android:text=" Alta de Equipo"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText4"
+        app:layout_constraintBottom_toTopOf="@+id/tvNombre"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/tvCiudad"
         android:layout_width="205dp"
         android:layout_height="64dp"
         android:layout_marginStart="94dp"
@@ -57,15 +59,16 @@
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText6"
+        android:id="@+id/tvNombrePabellon"
         android:layout_width="205dp"
         android:layout_height="64dp"
         android:layout_marginStart="94dp"
         android:layout_marginEnd="112dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginBottom="304dp"
         android:background="@android:drawable/editbox_dropdown_dark_frame"
         android:ems="10"
         android:hint="Nombre pabellon"
@@ -73,6 +76,7 @@
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -92,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText6"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombrePabellon"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

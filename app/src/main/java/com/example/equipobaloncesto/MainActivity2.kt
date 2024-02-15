@@ -14,6 +14,7 @@ import com.example.equipobaloncesto.activity.MainActivityAltaEquipo
 import com.example.equipobaloncesto.activity.MainActivityAltaResultado
 import com.example.equipobaloncesto.activity.MainActivityClasificacion
 import com.example.equipobaloncesto.activity.MainActivityListadoEquipo
+import com.example.equipobaloncesto.activity.MainActivityOption
 
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +46,7 @@ class MainActivity2 : AppCompatActivity() {
             startActivity(intent)
             return true
         } else if (item.itemId == R.id.alta_equipo) {
-            val intent = Intent(this,MainActivityAltaEquipo::class.java)
+            val intent = Intent(this,MainActivityOption::class.java)
             startActivity(intent)
             return true
         } else {
