@@ -11,9 +11,9 @@ import com.example.equipobaloncesto.database.entities.Equipo
 interface EquipoDao {
     @Query("SELECT * FROM equipos")
     fun obtenerEquipos(): List<Equipo>
-
     @Insert
-    fun insertarEquipo(equipo: Equipo)
+    suspend fun insertEquipo(equipo: Equipo)
+
 
     @Update
     fun actualizarEquipo(equipo: Equipo)

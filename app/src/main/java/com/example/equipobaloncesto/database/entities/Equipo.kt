@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "equipos", indices = [Index(value = ["nombre_equipo"], unique = true)])
 data class Equipo(
-    @PrimaryKey val id: Int,
+    @PrimaryKey (autoGenerate = true) val id: Int?,
     val nombre_equipo: String,
     val ciudad: String,
     val nombre_pabellón: String
