@@ -55,19 +55,8 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        lifecycleScope.launch {
-            databaseAccess()
-        }
-    }
-
-    suspend fun databaseAccess(){
-        val db = Room.databaseBuilder(
-            applicationContext,
-            MiAppDatabase::class.java, "DDBB" ).build()
-
-
-
-
 
     }
+
+
 }
