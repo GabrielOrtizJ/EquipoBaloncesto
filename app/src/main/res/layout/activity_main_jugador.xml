@@ -4,6 +4,120 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/jugador"
     tools:context=".activity.MainActivityJugador">
 
+    <EditText
+        android:id="@+id/editTextDorsal"
+        android:layout_width="213dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:ems="10"
+        android:hint="Dorsal"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPosicion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewVolver"
+        android:layout_width="70dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="307dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="48dp"
+        android:background="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNombre"
+        android:layout_width="213dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="22dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDorsal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextPosicion"
+        android:layout_width="213dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:ems="10"
+        android:hint="Posicion"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNombreEquipo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNombreEquipo"
+        android:layout_width="213dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="159dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:ems="10"
+        android:hint="Nombre de equipo"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/textViewVolver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCrearJugador"
+        android:layout_width="165dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="159dp"
+        android:background="@drawable/bt_entrar"
+        android:gravity="center"
+        android:text="Crear Jugador"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombreEquipo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="277dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="67dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:gravity="center"
+        android:text="Alta Jugador"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

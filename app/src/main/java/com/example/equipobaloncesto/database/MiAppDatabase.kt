@@ -1,6 +1,8 @@
 package com.example.equipobaloncesto.database
 
+import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.equipobaloncesto.database.dao.ClasificacionDao
 import com.example.equipobaloncesto.database.dao.EquipoDao
@@ -19,4 +21,21 @@ abstract class MiAppDatabase : RoomDatabase() {
     abstract fun jugadorDao(): JugadorDao
     abstract fun resultadoDao(): ResultadoDao
     abstract fun ClasificacionDao(): ClasificacionDao
+
+    companion object {
+        @Volatile
+        private var INSTANCE: MiAppDatabase? = null
+
+        fun getInstance(context: Context): MiAppDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    MiAppDatabase::class.java,
+                    "DDBB"
+                ).build()
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
 }

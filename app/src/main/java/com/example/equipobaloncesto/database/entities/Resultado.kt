@@ -18,10 +18,10 @@ import androidx.room.PrimaryKey
         onDelete = ForeignKey.CASCADE
     )],indices = [Index("puntosLocal"), Index("puntosVisitantes")])
 data class Resultado(
-    @PrimaryKey (autoGenerate = true) val id: Int,
+    @PrimaryKey (autoGenerate = true) val id: Int?,
     val equipo_localF: String,
     val equipo_visitanteF: String,
-    val fecha: String,
-    val puntosLocal: String,
-    val puntosVisitantes: String
+    val puntosLocal: Int,
+    val puntosVisitantes: Int,
+    val fecha: String
 )

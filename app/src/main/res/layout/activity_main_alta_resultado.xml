@@ -4,7 +4,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/resultado"
+    android:background="@drawable/resultados"
     tools:context=".activity.MainActivityAltaResultado">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="285dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="91dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:gravity="center"
+        android:text="Alta de Resultado"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextEquipoLocal"
+        android:layout_width="213dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="26dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:ems="10"
+        android:hint="Equipo Local"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEquipoVisitante"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/editTextTextEquipoVisitante"
+        android:layout_width="213dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="26dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:ems="10"
+        android:hint="Equipo Visitante"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEquipoLocal"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEquipoLocal"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEquipoLocal" />
+
+    <EditText
+        android:id="@+id/editTextTextPELocal"
+        android:layout_width="213dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:ems="10"
+        android:hint="Puntos Equipo Local"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEquipoVisitante"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEquipoVisitante"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEquipoVisitante" />
+
+    <EditText
+        android:id="@+id/editTextTextPEVisitante"
+        android:layout_width="213dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:ems="10"
+        android:hint="Puntos Equipo Visitante"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextFecha"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPELocal"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPELocal"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPELocal" />
+
+    <EditText
+        android:id="@+id/editTextTextFecha"
+        android:layout_width="214dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="192dp"
+        android:background="@android:drawable/divider_horizontal_textfield"
+        android:ems="10"
+        android:hint="Fecha"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPEVisitante"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPEVisitante" />
+
+    <TextView
+        android:id="@+id/textViewCrearResultado"
+        android:layout_width="134dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/bt_entrar"
+        android:gravity="center"
+        android:text="Crear Resultado"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextFecha"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextFecha" />
+
+    <TextView
+        android:id="@+id/btVolver"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="19dp"
+        android:background="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

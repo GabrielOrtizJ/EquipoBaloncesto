@@ -11,15 +11,15 @@ import com.example.equipobaloncesto.database.entities.Jugador
 @Dao
 interface JugadorDao {
     @Query("SELECT * FROM jugador WHERE nombre_equipoF  = :nombre_equipo")
-    fun obtenerJugadoresPorEquipo(nombre_equipo : String): List<Jugador>
+    suspend fun obtenerJugadoresPorEquipo(nombre_equipo : String): List<Jugador>
 
     @Insert
-    fun insertarJugador(jugador: Jugador)
+    suspend fun insertarJugador(jugador: Jugador)
 
     @Update
-    fun actualizarJugador(jugador: Jugador)
+    suspend fun actualizarJugador(jugador: Jugador)
 
     @Delete
-    fun borrarJugador(jugador: Jugador)
+    suspend fun borrarJugador(jugador: Jugador)
 }
 
