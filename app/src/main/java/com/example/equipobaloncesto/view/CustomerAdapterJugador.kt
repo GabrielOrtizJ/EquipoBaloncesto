@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.equipobaloncesto.R
+import com.example.equipobaloncesto.activity.MainActivityEditarEquipo
 import com.example.equipobaloncesto.database.entities.Jugador
 
 class CustomerAdapterJugador(private val jugadorList:List<Jugador>): RecyclerView.Adapter< CustomerAdapterJugador.JugadorViewHolder>() {
@@ -55,7 +56,7 @@ class CustomerAdapterJugador(private val jugadorList:List<Jugador>): RecyclerVie
         holder.bind(jugadorList[position], onClickListener)
     }
 
-    fun setOnItemClickListener(onClickListener: OnClickListener) {
+    fun setOnItemClickListener(onClickListener: MainActivityEditarEquipo) {
         this.onClickListener = onClickListener
     }
 

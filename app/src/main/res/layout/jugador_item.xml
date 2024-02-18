@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:drawable/screen_background_dark_transparent"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
     android:paddingEnd="5dp">
@@ -12,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="nombre   "
+        android:text="Nombre   "
         android:textColor="@color/white"
         android:textSize="20sp" />
 
@@ -20,7 +21,7 @@
         android:id="@+id/dorsal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dorsal  "
+        android:text="Dorsal  "
         android:textColor="@color/white"
         android:textSize="20sp" />
 
@@ -28,7 +29,7 @@
         android:id="@+id/posicion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="posicion  "
+        android:text="Posicion  "
         android:textColor="@color/white"
         android:textSize="20sp" />
 

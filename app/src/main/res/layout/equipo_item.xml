@@ -8,25 +8,34 @@
     android:padding="15dp">
 
     <TextView
-        android:id="@+id/nombre_equipo"
+        android:id="@+id/nombre1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
         android:padding="5dp"
-        android:text="Equipo   "
+        android:text="Nombre   "
         android:textColor="@color/white"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/puntos_equipo"
+        android:id="@+id/Ciudad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="5dp"
-        android:text="Puntos  "
+        android:text="Ciudad  "
         android:textColor="@color/white"
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/pabellon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Pabellon "
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 </LinearLayout>

@@ -9,9 +9,9 @@ import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 
 import com.example.equipobaloncesto.activity.MainActivityAltaResultado
-import com.example.equipobaloncesto.activity.MainActivityListadoEquipo
 import com.example.equipobaloncesto.activity.MainActivityOption
 import com.example.equipobaloncesto.view.MainActivityViewClasificacion
+import com.example.equipobaloncesto.view.MainActivityViewEquipo
 
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +39,7 @@ class MainActivity2 : AppCompatActivity() {
             startActivity(intent)
             return true
         } else if (item.itemId == R.id.listado_equipos) {
-            val intent = Intent(this,MainActivityListadoEquipo::class.java)
+            val intent = Intent(this,MainActivityViewEquipo::class.java)
             startActivity(intent)
             return true
         } else if (item.itemId == R.id.alta_equipo) {

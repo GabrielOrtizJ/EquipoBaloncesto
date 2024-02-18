@@ -30,13 +30,9 @@ class MainActivityViewClasificacion : AppCompatActivity() {
 
         try{
             listaEquipoClasamento=clasificacionDao.getAllOrderedByPuntosDesc()
-
             recyclerClasamento= findViewById(R.id.reciclerViewClasificacion)
-
             var clasificacionAdapter = listaEquipoClasamento?.let { CustomerAdapterClasificacion(it) }
-
             recyclerClasamento.layoutManager = LinearLayoutManager(this)
-
             recyclerClasamento.adapter = clasificacionAdapter
 
         }catch (e :Exception){

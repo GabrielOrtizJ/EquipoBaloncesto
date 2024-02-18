@@ -10,13 +10,16 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.equipobaloncesto.R
+import com.example.equipobaloncesto.activity.MainActivityEditarEquipo
 import com.example.equipobaloncesto.activity.MainActivityOption
 import com.example.equipobaloncesto.database.MiAppDatabase
 import com.example.equipobaloncesto.database.entities.Clasificacion
+import com.example.equipobaloncesto.database.entities.Equipo
 import com.example.equipobaloncesto.database.entities.Jugador
 import kotlinx.coroutines.launch
 
-class MainActivityViewJugador : AppCompatActivity() {
+class MainActivityViewJugador : AppCompatActivity(){
+
 
     lateinit var recyclerViewJugador: RecyclerView
     private var listaJugador: List<Jugador>? =null
@@ -31,8 +34,6 @@ class MainActivityViewJugador : AppCompatActivity() {
 
             }
         }
-
-
     }
     suspend fun databaseAccess(nombre:String) {
         val db = MiAppDatabase.getInstance(this)
@@ -49,8 +50,6 @@ class MainActivityViewJugador : AppCompatActivity() {
             }catch (e :Exception){
                 Toast.makeText(this, "No se puede mostrar!", Toast.LENGTH_SHORT).show()
             }
-
-
     }
 
 }
