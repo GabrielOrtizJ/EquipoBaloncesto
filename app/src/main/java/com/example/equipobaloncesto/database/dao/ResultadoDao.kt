@@ -10,14 +10,14 @@ import com.example.equipobaloncesto.database.entities.Resultado
 @Dao
 interface ResultadoDao {
     @Query("SELECT * FROM resultados")
-    fun obtenerResultados(): List<Resultado>
+    suspend fun obtenerResultados(): List<Resultado>
 
     @Insert
-    fun insertarResultado(resultado: Resultado)
+    suspend fun insertarResultado(resultado: Resultado)
 
     @Update
-    fun actualizarResultado(resultado: Resultado)
+    suspend fun actualizarResultado(resultado: Resultado)
 
     @Delete
-    fun borrarResultado(resultado: Resultado)
+    suspend fun borrarResultado(resultado: Resultado)
 }

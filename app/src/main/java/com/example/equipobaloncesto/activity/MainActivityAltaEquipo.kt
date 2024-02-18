@@ -44,7 +44,7 @@ class MainActivityAltaEquipo : AppCompatActivity() {
     suspend fun databaseAccess(nombre:String,ciudad:String,nombrePabellon:String) {
         val db = MiAppDatabase.getInstance(this)
         val equipoDao = db.equipoDao()
-        val clasificacionDao = db.ClasificacionDao()
+        val clasificacionDao = db.clasificacionDao()
 
         // Crear un nuevo equipo con los detalles introducidos por el usuario
         val nuevoEquipo = Equipo(null, nombre, ciudad, nombrePabellon)

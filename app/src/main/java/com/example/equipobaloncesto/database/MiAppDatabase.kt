@@ -20,7 +20,7 @@ abstract class MiAppDatabase : RoomDatabase() {
     abstract fun equipoDao(): EquipoDao
     abstract fun jugadorDao(): JugadorDao
     abstract fun resultadoDao(): ResultadoDao
-    abstract fun ClasificacionDao(): ClasificacionDao
+    abstract fun clasificacionDao(): ClasificacionDao
 
     companion object {
         @Volatile

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.EquipoBaloncesto"
         tools:targetApi="31">
         <activity
+            android:name=".view.MainActivityViewClasificacion"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivityViewJugador"
+            android:exported="false" />
+        <activity
             android:name=".activity.MainActivityListaJugadores"
             android:exported="false" />
         <activity

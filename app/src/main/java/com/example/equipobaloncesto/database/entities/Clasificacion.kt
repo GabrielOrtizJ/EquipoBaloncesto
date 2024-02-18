@@ -15,6 +15,6 @@ import androidx.room.PrimaryKey
     indices = [Index("nombre_equipoF")])
 data class Clasificacion(
     @PrimaryKey(autoGenerate = true) val id: Int?,
-    val puntos: Int,
+    var puntos: Int,
     val nombre_equipoF: String
 )

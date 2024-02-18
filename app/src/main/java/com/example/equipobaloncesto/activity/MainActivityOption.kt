@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import com.example.equipobaloncesto.MainActivity2
 import com.example.equipobaloncesto.R
+import com.example.equipobaloncesto.view.MainActivityViewJugador
 
 class MainActivityOption : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +26,7 @@ class MainActivityOption : AppCompatActivity() {
             startActivity(intent)
         }
         mostrarJugadores.setOnClickListener{
-            val intent = Intent(this, MainActivityListaJugadores::class.java)
+            val intent = Intent(this, MainActivityViewJugador::class.java)
             startActivity(intent)
         }
         volver.setOnClickListener{

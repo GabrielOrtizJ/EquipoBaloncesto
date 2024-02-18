@@ -11,11 +11,13 @@ import com.example.equipobaloncesto.database.entities.Equipo
 interface EquipoDao {
     @Query("SELECT * FROM equipos")
     suspend fun obtenerEquipos(): List<Equipo>
+    @Query("SELECT * FROM equipos WHERE nombre_equipo LIKE :nombre || '%'")
+    suspend fun getEquiposByNombre(nombre: String): List<Equipo>
     @Insert
     suspend fun insertEquipo(equipo: Equipo)
 
- @Update
- suspend fun actualizarEquipo(equipo: Equipo)
+    @Update
+    suspend fun actualizarEquipo(equipo: Equipo)
 
     @Delete
     suspend fun borrarEquipo(equipo: Equipo)

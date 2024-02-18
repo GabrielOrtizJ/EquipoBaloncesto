@@ -1,20 +1,17 @@
 package com.example.equipobaloncesto
 
 import android.content.Intent
-import android.graphics.drawable.AnimatedImageDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
 
-import com.example.equipobaloncesto.activity.MainActivityAltaEquipo
 import com.example.equipobaloncesto.activity.MainActivityAltaResultado
-import com.example.equipobaloncesto.activity.MainActivityClasificacion
 import com.example.equipobaloncesto.activity.MainActivityListadoEquipo
 import com.example.equipobaloncesto.activity.MainActivityOption
+import com.example.equipobaloncesto.view.MainActivityViewClasificacion
 
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +31,7 @@ class MainActivity2 : AppCompatActivity() {
             finish();
             return true
         } else if (item.itemId == R.id.Clasificación) {
-            val intent = Intent(this,MainActivityClasificacion::class.java)
+            val intent = Intent(this,MainActivityViewClasificacion::class.java)
             startActivity(intent)
             return true
         } else if (item.itemId == R.id.alta_resultados) {
