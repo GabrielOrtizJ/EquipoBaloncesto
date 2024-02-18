@@ -22,6 +22,8 @@ class MainActivityEditarEquipo : AppCompatActivity(), CustomerAdapterJugador.OnC
     var nombreEquipo=""
     var listaJugador : List<Jugador>? = null
     lateinit var recyclerJugadores: RecyclerView
+    var selectedItemPosition: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -36,6 +38,9 @@ class MainActivityEditarEquipo : AppCompatActivity(), CustomerAdapterJugador.OnC
     suspend fun databaseAccess() {
         val db = MiAppDatabase.getInstance(this)
         val jugadorDao = db.jugadorDao()
+
+
+
         try{
             listaJugador=jugadorDao.obtenerJugadoresPorEquipo(nombreEquipo)
             recyclerJugadores= findViewById(R.id.recyclerViewEditaJugadores)
@@ -62,23 +67,30 @@ class MainActivityEditarEquipo : AppCompatActivity(), CustomerAdapterJugador.OnC
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.editar_menu, menu)
         if (menu != null) {
-
             menu.findItem(R.id.Insertar).setActionView(v)
             menu.findItem(R.id.Eliminar).setActionView(v)
             menu.findItem(R.id.Editar).setActionView(v)
         }
 
+        // Obtén la posición del elemento seleccionado
+        val position = recyclerJugadores.getChildAdapterPosition(v!!)
+        // Guarda la posición en una variable de instancia
+        selectedItemPosition = position
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
-        val view = item.actionView as EditText
+
+        val jugador = listaJugador!![selectedItemPosition]
         return when (item.itemId) {
             R.id.Insertar -> {
         // copy(view)
                 true
             }
             R.id.Eliminar -> {
-        //paste(view)
+                suspend fun databaseAccess() {
+                    val db = MiAppDatabase.getInstance(this)
+                }
+
                 true
             }
             R.id.Editar -> {
