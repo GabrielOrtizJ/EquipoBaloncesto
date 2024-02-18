@@ -1,5 +1,6 @@
 package com.example.equipobaloncesto.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
@@ -69,7 +70,7 @@ class MainActivityEditarEquipo : AppCompatActivity(), CustomerAdapterJugador.OnC
         if (menu != null) {
             menu.findItem(R.id.Insertar).setActionView(v)
             menu.findItem(R.id.Eliminar).setActionView(v)
-            menu.findItem(R.id.Editar).setActionView(v)
+       //     menu.findItem(R.id.Editar).setActionView(v)
         }
 
         // Obtén la posición del elemento seleccionado
@@ -83,22 +84,28 @@ class MainActivityEditarEquipo : AppCompatActivity(), CustomerAdapterJugador.OnC
         val jugador = listaJugador!![selectedItemPosition]
         return when (item.itemId) {
             R.id.Insertar -> {
-        // copy(view)
+                val intent = Intent(this, MainActivityAltaEquipo::class.java)
+                startActivity(intent)
                 true
             }
             R.id.Eliminar -> {
-                suspend fun databaseAccess() {
-                    val db = MiAppDatabase.getInstance(this)
+                lifecycleScope.launch {
+                    databaseAccessEliminar(jugador)
                 }
+
 
                 true
             }
-            R.id.Editar -> {
-        //paste(view)
-                true
-            }
+//            R.id.Editar -> {
+//            //falta por hacer
+//                true
+//            }
             else -> super.onContextItemSelected(item)
         }
     }
-
+    suspend fun databaseAccessEliminar(jugador:Jugador) {
+        val db = MiAppDatabase.getInstance(this)
+        val jugadora = db.jugadorDao()
+        jugadora.borrarJugador(jugador)
+    }
 }

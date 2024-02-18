@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import com.example.equipobaloncesto.database.MiAppDatabase
@@ -31,17 +32,25 @@ class MainActivity : AppCompatActivity() {
         check.isChecked = sharedPreferences.getBoolean("RememberMe", false)
 
         val entrar = findViewById<TextView>(R.id.textViewEntrar)
-        entrar.setOnClickListener{
-            if (check.isChecked) {
-                // Guardar datos del usuario
-                editor.putString("Username", Usuario.text.toString())
-                editor.putString("Password", pwd.text.toString())
-                editor.putBoolean("RememberMe", true)
-                editor.putLong("LoginTime", System.currentTimeMillis())
-                editor.apply()
+        entrar.setOnClickListener {
+            if (Usuario.text.toString() + "1" == pwd.text.toString()) {
+                if (check.isChecked) {
+                    // Guardar datos del usuario
+                    editor.putString("Username", Usuario.text.toString())
+                    editor.putString("Password", pwd.text.toString())
+                    editor.putBoolean("RememberMe", true)
+                    editor.putLong("LoginTime", System.currentTimeMillis())
+                    editor.apply()
+                }
+                val intent = Intent(this, MainActivity2::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(
+                    this,
+                    "La contraseña debe ser el nombre de usuario seguido de un 1",
+                    Toast.LENGTH_LONG
+                ).show()
             }
-            val intent = Intent(this,MainActivity2::class.java)
-            startActivity(intent)
         }
 
         val rememberMe = sharedPreferences.getBoolean("RememberMe", false)
@@ -49,14 +58,9 @@ class MainActivity : AppCompatActivity() {
         val twoDaysMillis: Long = 2 * 24 * 60 * 60 * 1000
 
         if (rememberMe && System.currentTimeMillis() - loginTime < twoDaysMillis) {
-            val intent = Intent(this,MainActivity2::class.java)
+            val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
             finish()
         }
-
-
-
     }
-
-
 }
